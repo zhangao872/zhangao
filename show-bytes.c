@@ -27,6 +27,19 @@ void show_float(float x) {
 void show_pointer(void *x) {
     show_bytes((byte_pointer) &x, sizeof(void *));
 }
+
+//添加的代码
+void show_short(short x){
+    show_bytes((byte_pointer) &x, sizeof(short));
+}
+
+void show_long(long x){
+    show_bytes((byte_pointer) &x, sizeof(long));
+}
+
+void show_double(double x){
+    show_bytes((byte_pointer) &x, sizeof(double));
+}
 /* $end show-bytes */
 
 
@@ -126,6 +139,16 @@ int main(int argc, char *argv[])
 	string_ueg();
 	printf("Calling string_leg\n");
 	string_leg();
+
+    //添加的代码
+    printf("Calling show_short\nfor x=358\n");
+    show_short(58);
+
+    printf("Calling show_long\nfor x=274877906944\n");
+    show_long(274877906944);
+
+    printf("Calling show_double\nfor x =3.1415926535\n");
+    show_double(3.1415926535);
     }
     return 0;
 }
